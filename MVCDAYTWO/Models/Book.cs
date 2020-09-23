@@ -44,3 +44,4 @@ namespace MVCDAYTWO.Models
         public virtual Author Author { get; set; }
     }
 }
+
