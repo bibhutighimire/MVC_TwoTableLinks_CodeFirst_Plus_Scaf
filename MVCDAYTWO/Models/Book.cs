@@ -20,27 +20,27 @@ namespace MVCDAYTWO.Models
         [Column("title", TypeName = "varchar(30)")]
         public string Title { get; set; }
 
-        [Column("publicationdate", TypeName = "datetime")]
+        [Column("publicationdate", TypeName = "date")]
         [Required]
         public DateTime PublicationDate { get; set; }
 
-        [Column("checkedoutdate", TypeName = "datetime")]
+        [Column("checkedoutdate", TypeName = "date")]
         [Required]
         public DateTime CheckedOutDate { get; set; }
 
-        [Column("duedate", TypeName = "datetime")]
+        [Column("duedate", TypeName = "date")]
         [Required]
         public DateTime DueDate { get; set; }
 
-        [Column("returnedate", TypeName = "datetime")]
-        [Required]
+        [Column("returnedate", TypeName = "date")]
+
         public DateTime? ReturnedDate { get; set; }
 
         [Column("author_id", TypeName = "int(10)")]
         public int AuthorID { get; set; }
 
         [ForeignKey(nameof(AuthorID))]
-        [InverseProperty(nameof(Models.Author.ID))]
+        [InverseProperty(nameof(Models.Author.Books))]
         public virtual Author Author { get; set; }
     }
 }

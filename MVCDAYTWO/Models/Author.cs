@@ -23,7 +23,7 @@ namespace MVCDAYTWO.Models
         [Column("name", TypeName = "varchar(30)")]
         public string Name { get; set; }
           
-        [InverseProperty(nameof(Models.Book.AuthorID))]
+        [InverseProperty(nameof(Models.Book.Author))]
         public virtual ICollection<Book> Books { get; set; }
     }
 }

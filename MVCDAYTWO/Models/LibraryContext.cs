@@ -58,21 +58,21 @@ namespace MVCDAYTWO.Models
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_general_ci");
 
-                entity.Property(e => e.PublicationDate)
-                    .HasCharSet("utf8mb4")
-                    .HasCollation("utf8mb4_general_ci");
+                //entity.Property(e => e.PublicationDate)
+                //    .HasCharSet("utf8mb4")
+                //    .HasCollation("utf8mb4_general_ci");
 
-                entity.Property(e => e.CheckedOutDate)
-                    .HasCharSet("utf8mb4")
-                    .HasCollation("utf8mb4_general_ci");
+                //entity.Property(e => e.CheckedOutDate)
+                //    .HasCharSet("utf8mb4")
+                //    .HasCollation("utf8mb4_general_ci");
 
-                entity.Property(e => e.DueDate)
-                    .HasCharSet("utf8mb4")
-                    .HasCollation("utf8mb4_general_ci");
+                //entity.Property(e => e.DueDate)
+                //    .HasCharSet("utf8mb4")
+                //    .HasCollation("utf8mb4_general_ci");
 
-                entity.Property(e => e.ReturnedDate)
-                    .HasCharSet("utf8mb4")
-                    .HasCollation("utf8mb4_general_ci");
+                //entity.Property(e => e.ReturnedDate)
+                //    .HasCharSet("utf8mb4")
+                //    .HasCollation("utf8mb4_general_ci");
 
 
                 // Enforce the Foreign Key
@@ -92,31 +92,34 @@ namespace MVCDAYTWO.Models
                     {
                         ID = -1,
                         Title = "Title One",
-                        PublicationDate = Convert.ToDateTime(02 / 02 / 2018),
-                        CheckedOutDate = Convert.ToDateTime(12 / 25 / 2019),
-                        ReturnedDate = Convert.ToDateTime(12 / 27 / 2019),
-                        AuthorID=-2
-                    },
-
-                    new Book()
-                    {
-                        ID = -2,
-                        Title = "Title Two",
-                        PublicationDate = Convert.ToDateTime(02 / 22 / 2017),
-                        CheckedOutDate = Convert.ToDateTime(12 / 25 / 2019),
-                        ReturnedDate = null,
-                        AuthorID = -2
-                    },
-
-                    new Book()
-                    {
-                        ID = -3,
-                        Title = "Title Three",
-                        PublicationDate = Convert.ToDateTime(02 / 12 / 2012),
-                        CheckedOutDate = Convert.ToDateTime(12 / 25 / 2019),
-                        ReturnedDate = Convert.ToDateTime(12 / 26 / 2019),
+                        PublicationDate = new DateTime(2018, 02, 02),
+                        CheckedOutDate = new DateTime(2018, 02, 02),
+                        DueDate = new DateTime(2018, 02, 02),
+                        ReturnedDate = new DateTime(2018, 02, 02),
                         AuthorID = -2
                     });
+
+                    //new Book()
+                    //{
+                    //    ID = -2,
+                    //    Title = "Title Two",
+                    //    PublicationDate = Convert.ToDateTime(02 / 22 / 2017),
+                    //    CheckedOutDate = Convert.ToDateTime(12 / 25 / 2019),
+                    //    DueDate = Convert.ToDateTime(12 / 25 / 2019),
+                    //    ReturnedDate = null,
+                    //    AuthorID = -2
+                    //},
+
+                    //new Book()
+                    //{
+                    //    ID = -3,
+                    //    Title = "Title Three",
+                    //    PublicationDate = Convert.ToDateTime(02 / 12 / 2012),
+                    //    CheckedOutDate = Convert.ToDateTime(12 / 25 / 2019),
+                    //    DueDate = Convert.ToDateTime(12 / 25 / 2019),
+                    //    ReturnedDate = Convert.ToDateTime(12 / 26 / 2019),
+                    //    AuthorID = -2
+                    //});
 
 
             });
