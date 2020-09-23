@@ -78,13 +78,13 @@ namespace MVCDAYTWO.Models
                 // Enforce the Foreign Key
                 // Specify the relationship between the child and parent
                 entity.HasOne(child => child.Author)
-                // Specify the relationship between the parent and child(ren)
+                    // Specify the relationship between the parent and child(ren)
                     .WithMany(parent => parent.Books)
-                // Specify the property acting as the foreign key
+                    // Specify the property acting as the foreign key
                     .HasForeignKey(child => child.AuthorID)
-                // Specify delete behaviour
+                    // Specify delete behaviour
                     .OnDelete(DeleteBehavior.Cascade)
-                // Name the foreign key
+                    // Name the foreign key
                     .HasConstraintName("FK_Of_Author");
 
                 entity.HasData(
@@ -92,38 +92,34 @@ namespace MVCDAYTWO.Models
                     {
                         ID = -1,
                         Title = "Title One",
-                        PublicationDate = new DateTime(2018, 02, 02),
-                        CheckedOutDate = new DateTime(2018, 02, 02),
-                        DueDate = new DateTime(2018, 02, 02),
-                        ReturnedDate = new DateTime(2018, 02, 02),
+                        PublicationDate = new DateTime(2012, 12, 25),
+                        CheckedOutDate = new DateTime(2018, 12, 25),
+                        DueDate = new DateTime(2018, 12, 25),
+                        ReturnedDate = new DateTime(2018, 12, 25),
                         AuthorID = -2
-                    });
-
-                    //new Book()
-                    //{
-                    //    ID = -2,
-                    //    Title = "Title Two",
-                    //    PublicationDate = Convert.ToDateTime(02 / 22 / 2017),
-                    //    CheckedOutDate = Convert.ToDateTime(12 / 25 / 2019),
-                    //    DueDate = Convert.ToDateTime(12 / 25 / 2019),
-                    //    ReturnedDate = null,
-                    //    AuthorID = -2
-                    //},
-
-                    //new Book()
-                    //{
-                    //    ID = -3,
-                    //    Title = "Title Three",
-                    //    PublicationDate = Convert.ToDateTime(02 / 12 / 2012),
-                    //    CheckedOutDate = Convert.ToDateTime(12 / 25 / 2019),
-                    //    DueDate = Convert.ToDateTime(12 / 25 / 2019),
-                    //    ReturnedDate = Convert.ToDateTime(12 / 26 / 2019),
-                    //    AuthorID = -2
-                    //});
-
+                    },
+                    new Book()
+                    {
+                        ID = -2,
+                        Title = "Title Two",
+                        PublicationDate = new DateTime(2010, 12, 25),
+                        CheckedOutDate = new DateTime(2018, 12, 25),
+                        DueDate = new DateTime(2018, 12, 25),
+                        ReturnedDate = null,
+                        AuthorID = -2
+                    },
+                     new Book()
+                     {
+                         ID = -3,
+                         Title = "Title Three",
+                         PublicationDate = new DateTime(2008, 12, 25),
+                         CheckedOutDate = new DateTime(2018, 12, 25),
+                         DueDate = new DateTime(2018, 12, 25),
+                         ReturnedDate = new DateTime(2018, 12, 25),
+                         AuthorID = -2
+                     });
 
             });
-
             OnModelCreatingPartial(modelBuilder);
         }
 
