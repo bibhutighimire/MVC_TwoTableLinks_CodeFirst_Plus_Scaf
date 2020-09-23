@@ -59,25 +59,7 @@ namespace MVCDAYTWO.Models
                     .HasCharSet("utf8mb4")
                     .HasCollation("utf8mb4_general_ci");
 
-                //entity.Property(e => e.PublicationDate)
-                //    .HasCharSet("utf8mb4")
-                //    .HasCollation("utf8mb4_general_ci");
-
-                //entity.Property(e => e.CheckedOutDate)
-                //    .HasCharSet("utf8mb4")
-                //    .HasCollation("utf8mb4_general_ci");
-
-                //entity.Property(e => e.DueDate)
-                //    .HasCharSet("utf8mb4")
-                //    .HasCollation("utf8mb4_general_ci");
-
-                //entity.Property(e => e.ReturnedDate)
-                //    .HasCharSet("utf8mb4")
-                //    .HasCollation("utf8mb4_general_ci");
-
-
-                // Enforce the Foreign Key
-                // Specify the relationship between the child and parent
+                
                 entity.HasOne(child => child.Author)
                     // Specify the relationship between the parent and child(ren)
                     .WithMany(parent => parent.Books)
